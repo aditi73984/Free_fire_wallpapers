@@ -28,7 +28,8 @@ export default function App() {
       <footer className="text-center text-sm text-gray-500 p-6">
  <span className="inline-flex items-center gap-2">
     <span></span> Made with ❤️ for Free Fire fans <span></span> 
-    <span></span> Download & Enjoy your favorite wallpapers!</span>  
+    <span></span> Download & Enjoy your favorite wallpapers!</span> 
+    <p> Developed by <strong>Aditi</strong> © 2025</p> 
     </footer>
     </div>
   );
