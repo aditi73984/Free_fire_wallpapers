@@ -232,14 +232,26 @@ export default function Gallery({ searchQuery }) {
     link.click();
   };
 
-  const filtered = wallpapers.filter((wall) =>
-    wall.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // const filtered = wallpapers.filter((wall) =>
+  //   wall.title.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+  const safeSearch = searchQuery?.toLowerCase() || "";
 
-  const sortedWallpapers =
-    searchQuery.trim() === ""
-      ? wallpapers
-      : [...filtered, ...wallpapers.filter((w) => !filtered.includes(w))];
+const filtered = wallpapers.filter((wall) =>
+  wall.title?.toLowerCase().includes(safeSearch)
+);
+
+
+  // const sortedWallpapers =
+  //   searchQuery.trim() === ""
+  //     ? wallpapers
+  //     : [...filtered, ...wallpapers.filter((w) => !filtered.includes(w))];
+
+const sortedWallpapers =
+  safeSearch === ""
+    ? wallpapers
+    : [...filtered, ...wallpapers.filter((w) => !filtered.includes(w))];
+
 
   return (
     <div className="p-6">
